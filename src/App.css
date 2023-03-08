@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 .main {
-  background: URL('./src/assets/climateimg.png') center center/ cover;
   height: 100vh;
   display: flex;
   flex-direction: column;

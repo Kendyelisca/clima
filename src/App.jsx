@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import WeatherApp from './Componentes/WeatherResults/WeatherResults';
 import './App.css';
+import fondo from './assets/climateimg.png';
 
 function App() {
   const [country, setCountry] = useState('');
@@ -29,8 +30,14 @@ function App() {
       });
   };
 
+  const style = {
+    backgroundImage: `url(${fondo})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
+
   return (
-    <div className="main">
+    <div className="main" style={style}>
       <form class="formulario" onSubmit={handleFormSubmit}>
         <div class="flex -mx-3 mb-6">
           <div class="w-full px-3 mb-6 md:mb-0">
