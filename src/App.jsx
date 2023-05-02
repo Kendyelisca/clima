@@ -38,9 +38,7 @@ function App() {
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               for="location-input"
-            >
-              Country
-            </label>
+            ></label>
             <input
               id="location-input"
               type="text"
@@ -50,7 +48,7 @@ function App() {
             ></input>
           </div>
           <div class="city">
-            <label for="location-input">City</label>
+            <label for="location-input"></label>
             <input
               id="location-input"
               type="text"
