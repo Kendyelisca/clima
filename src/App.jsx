@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import WeatherApp from './Componentes/WeatherResults/WeatherResults';
 import './App.css';
-import fondo from './assets/climateimg.png';
+import WeatherIcon from './Componentes/WheatherIcon';
 
 function App() {
   const [country, setCountry] = useState('');
@@ -30,17 +30,11 @@ function App() {
       });
   };
 
-  const style = {
-    backgroundImage: `url(${fondo})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  };
-
   return (
-    <div className="main" style={style}>
+    <div className="main">
       <form class="formulario" onSubmit={handleFormSubmit}>
-        <div class="flex -mx-3 mb-6">
-          <div class="w-full px-3 mb-6 md:mb-0">
+        <div class="container">
+          <div class="country">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               for="location-input"
@@ -48,7 +42,6 @@ function App() {
               Country
             </label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="location-input"
               type="text"
               placeholder="Enter the country..."
@@ -56,15 +49,9 @@ function App() {
               onChange={(event) => setCountry(event.target.value)}
             ></input>
           </div>
-          <div class="w-full px-3 mb-6 md:mb-0">
-            <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="location-input"
-            >
-              City
-            </label>
+          <div class="city">
+            <label for="location-input">City</label>
             <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="location-input"
               type="text"
               placeholder="Enter the city..."
@@ -72,17 +59,14 @@ function App() {
               onChange={(event) => setCity(event.target.value)}
             ></input>
           </div>
-          <div className="flex justify-center items-center">
-            <button
-              class="shadow btn bg-red-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-5 border-r-8 rounded w-1/1"
-              type="submit"
-            >
+          <div className="btn-container">
+            <button class="btn-1" type="submit">
               Get weather
             </button>
           </div>
         </div>
       </form>
-      {error && <div>{error}</div>} {/* muestra el mensaje de error si hay un error */}
+      {error && <p>{error}</p>} {/* muestra el mensaje de error si hay un error */}
       {weatherData && <WeatherApp weatherData={weatherData} />}
     </div>
   );
