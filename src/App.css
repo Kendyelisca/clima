@@ -5,11 +5,12 @@
 }
 
 body {
-  background-image: url("./weather-image.jpg");
+  background-image: url("./weather-imag.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  background-color: rgb(23, 103, 103);
 }
 .main {
   height: 100%;
